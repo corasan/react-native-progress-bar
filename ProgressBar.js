@@ -19,7 +19,7 @@ var styles = StyleSheet.create({
   }
 });
 
-var ProgressBar = React.createClass({
+var ProgressBar = React.Component({
 
   getDefaultProps() {
     return {
