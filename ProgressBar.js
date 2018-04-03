@@ -19,19 +19,18 @@ var styles = StyleSheet.create({
   }
 });
 
-var ProgressBar = React.Component({
+class ProgressBar extends React.Component {
+  constructor() {
+    this.state = {
+      progress: new Animated.Value(this.props.initialProgress || 0)
+    }
+  }
 
   getDefaultProps() {
     return {
       style: styles,
       easing: Easing.inOut(Easing.ease),
       easingDuration: 500
-    };
-  },
-
-  getInitialState() {
-    return {
-      progress: new Animated.Value(this.props.initialProgress || 0)
     };
   },
 
@@ -62,6 +61,6 @@ var ProgressBar = React.Component({
       toValue: this.props.progress
     }).start();
   }
-});
+};
 
 module.exports = ProgressBar;
